@@ -3,6 +3,7 @@ import string
 import tkinter as tk
 from tkinter import messagebox
 import pyperclip
+from tkinter import font
 
 def generate_password(length=12):
     characters = string.ascii_letters + string.digits + string.punctuation
@@ -26,16 +27,12 @@ root.resizable(False, False)
 
 # Stil ayarları
 root.configure(bg="#2c3e50")
-style = {
-    "bg": "#2c3e50",
-    "fg": "#ecf0f1",
-    "font": ("Helvetica", 12)
-}
+coolvetica = font.Font(family="Coolvetica", size=12)
 
-tk.Label(root, text="Şifrenizin uzunluğunu girin:", **style).pack(pady=10)
-entry = tk.Entry(root, font=("Helvetica", 12))
+tk.Label(root, text="Şifrenizin uzunluğunu girin:", bg="#2c3e50", fg="#ecf0f1", font=coolvetica).pack(pady=10)
+entry = tk.Entry(root, font=coolvetica)
 entry.pack(pady=5)
 
-tk.Button(root, text="Şifre Oluştur", command=on_generate, bg="#e74c3c", fg="#ecf0f1", font=("Helvetica", 12)).pack(pady=20)
+tk.Button(root, text="Şifre Oluştur", command=on_generate, bg="#e74c3c", fg="#ecf0f1", font=coolvetica).pack(pady=20)
 
 root.mainloop()
